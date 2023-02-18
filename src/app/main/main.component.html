@@ -1,0 +1,68 @@
+<button type="button" class="btn btn-primary" (click)="addEmployee()">AddEmployee</button>
+<app-table (employeeData)="deleteEmployee($event)" (editData)="editData($event)"></app-table>
+<div class="row" *ngIf="addnewEmployee">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" formControlName="email">
+
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" formControlName="phone">
+
+            </div>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" class="form-control" id="company" formControlName="company">
+
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="radio" value="male" name="gender" formControlName="gender"> Male
+                <input type="radio" value="female" name="gender" formControlName="gender"> Female
+            </div>
+
+            <div class="form-group">
+                <label for="dob">DOB</label>
+                <input type="date" class="form-control" id="dob" formControlName="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+            </div>
+
+            <div class="buttonClass">
+                <div class="saveBtn">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+                <div class="cancel">
+                    <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div>

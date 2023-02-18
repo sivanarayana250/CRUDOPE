@@ -1,0 +1,13 @@
+.form-group {
+    padding: 10px;
+}
+
+.form-group input {
+    margin-left: 10px;
+}
+.buttonClass {
+    display: flex;
+}
+.buttonClass .saveBtn {
+    margin-right: 10px;
+}

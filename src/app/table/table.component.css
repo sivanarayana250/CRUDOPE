@@ -1,0 +1,41 @@
+table {
+    border-collapse: separate;
+    border-spacing: 10px;
+    width:100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: none;
+  }
+
+  th {
+    background-color: rgb(172, 20, 20);
+    color: white;
+    padding:10px;
+  }
+  
+th, tr{
+  padding-right:10px;
+}
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  .edit-button, .delete-button {
+    border: none;
+    background: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .edit-button:hover, .delete-button:hover {
+    color: red;
+  }
