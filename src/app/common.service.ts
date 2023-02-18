@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-import { Console } from 'console';
+import { Injectable } from '@angular/core';   
 import { Employee } from './employee.model';
 
 
