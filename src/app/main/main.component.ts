@@ -106,6 +106,7 @@ editEmployee: boolean =false ;
       }
       this.employeeForm.reset();
       this.addnewEmployee = false;
+      this.editEmployee = false;
     } else {
       console.log('errors in the table');
     }
