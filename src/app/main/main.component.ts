@@ -101,6 +101,7 @@ editEmployee: boolean =false ;
       if (this.commonService.editToggle) {
         this.commonService.editEmployee(this.employeeForm.value);
         this.commonService.editToggle = !this.commonService.editToggle;
+        console.log(this.employeeForm.value,this.commonService.editToggle)
       } else {
         this.commonService.addEmployee(this.employeeForm.value);
       }

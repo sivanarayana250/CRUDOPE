@@ -28,7 +28,7 @@ export class CommonService {
       dob: '10-08-1996',
       gender: 'male',
       password: 'werfrf',
-      confirmPassword: 'werfrf'
+      confirmPassword: 'werfrf',
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ export class CommonService {
       dob: '10-08-1995',
       gender: 'male',
       password: 'wefd',
-      confirmPassword:'wefd',
+      confirmPassword: 'wefd',
     },
   ];
   editToggle: boolean = false;
@@ -56,6 +56,7 @@ export class CommonService {
   }
 
   public editEmployee(employeeData: Employee) {
+    console.log(employeeData);
     let indexToUpdate = this.EMPLOYEE_DATA.findIndex(
       (item) => item.id === employeeData.id
     );
