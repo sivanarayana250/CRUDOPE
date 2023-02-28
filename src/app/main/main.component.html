@@ -44,10 +44,20 @@
           (keypress)="numberOnly($event)"
           formControlName="phone"
         />
-        <div *ngIf="employeeForm.controls.phone.touched && employeeForm.controls.phone.invalid" class="alert alert-danger">  
-        <div *ngIf="employeeForm.controls.phone.errors.required">Mobile Number is required.</div>  
-        <div *ngIf="employeeForm.controls.phone.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
-    </div> 
+        <div
+          *ngIf="
+            employeeForm.controls.phone.touched &&
+            employeeForm.controls.phone.invalid
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="employeeForm.controls.phone.errors.required">
+            Mobile Number is required.
+          </div>
+          <div *ngIf="employeeForm.controls.phone.errors.pattern">
+            Please, Enter 10 digit Mobile Number.
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="company">Company</label>
@@ -87,36 +97,49 @@
         />
       </div>
 
-    <div class="form-group">
+      <div class="form-group">
         <label for="password">Password</label>
         <input
-              type="password"
-              class="form-control"
-              id="password"
-              formControlName="password"
-              (change)="onPasswordChange()"
-            />
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          (change)="onPasswordChange()"
+        />
         <div
-            *ngIf="employeeForm.controls['password'].invalid && (employeeForm.controls['password'].dirty || employeeForm.controls['password'].touched)">
-            <div *ngIf="employeeForm.controls.password.errors">Password is required</div>
+          *ngIf="
+            employeeForm.controls['password'].invalid &&
+            (employeeForm.controls['password'].dirty ||
+              employeeForm.controls['password'].touched)
+          "
+        >
+          <div *ngIf="employeeForm.controls.password.errors">
+            Password is required
+          </div>
         </div>
-    </div>
+      </div>
 
       <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input
-                            type="password"
-                            class="form-control"
-                            id="confirmPassword"
-                            formControlName="confirmPassword"
-                            (change)="onPasswordChange()"
-                          />
-                          <span *ngIf="confirm_password.hasError('mismatch') && employeeForm.controls['confirmPassword'].touched" >Password do not match.</span>
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+          (change)="onPasswordChange()"
+        />
+        <span
+          *ngIf="
+            confirm_password.hasError('mismatch') &&
+            employeeForm.controls['confirmPassword'].touched
+          "
+          >Password do not match.</span
+        >
       </div>
 
       <div class="buttonClass">
         <div class="saveBtn">
-          <button class="btn btn-primary" type="submit" >Register</button>
+          <button class="btn btn-primary" type="submit">Register</button>
         </div>
         <div class="cancel">
           <button type="button" mat-button (click)="onNoClick()">Cancel</button>
@@ -124,8 +147,6 @@
       </div>
     </form>
   </div>
-
-
 </div>
 <app-table
   (employeeData)="deleteEmployee($event)"
