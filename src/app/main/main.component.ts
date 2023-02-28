@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
     this.employeeForm = new FormGroup({
       'id': new FormControl(null, [Validators.required]),
       'company': new FormControl(null, [Validators.required]),
-      'phone': new FormControl(null, [Validators.required]),
+      'phone': new FormControl(null, [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       'email': new FormControl(null, [Validators.required]),
       'lastName': new FormControl(null, [Validators.required]),
       'firstName': new FormControl(null, [Validators.required]),
@@ -30,15 +30,26 @@ export class MainComponent implements OnInit {
     );
     // console.log(this.employeeForm.invalid)
   }
+
+  public numberOnly(event:any): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
+  }
+
   public addEmployee() {
     this.addnewEmployee = true;
 
   }
-  deleteEmployee(data:any) {
+
+  public deleteEmployee(data:any) {
       this.commonService.deleteEmployee(data.index);
   }
 
-  editData (data:any) {
+  public editData (data:any) {
     this.employeeForm.patchValue(data.employee);
     this.commonService.editToggle =!this.commonService.editToggle;
     this.addnewEmployee = !this.addnewEmployee;
