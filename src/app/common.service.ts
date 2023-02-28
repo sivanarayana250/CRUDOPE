@@ -15,7 +15,7 @@ export class CommonService {
       lastName: 'George',
       dob: '09-07-1997',
       gender: 'male',
-      password: 'eref'
+      password: 'eref',
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export class CommonService {
       lastName: 'kelli',
       dob: '10-08-1996',
       gender: 'male',
-      password:'werfrf'
+      password: 'werfrf',
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export class CommonService {
       lastName: 'kumar',
       dob: '10-08-1995',
       gender: 'male',
-      password:'wefd'
+      password: 'wefd',
     },
   ];
   editToggle: boolean = false;
@@ -45,7 +45,7 @@ export class CommonService {
 
   public addEmployee(employee: Employee) {
     employee.id = this.EMPLOYEE_DATA.length;
-    this.EMPLOYEE_DATA.unshift(employee);
+    this.EMPLOYEE_DATA.push(employee);
   }
 
   public deleteEmployee(index: number) {

@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
     this.employeeForm.addValidators(
       matchValidator(this.employeeForm.get('password'), this.employeeForm.get('confirmPassword'))
     );
-
+    // console.log(this.employeeForm.invalid)
   }
   public addEmployee() {
     this.addnewEmployee = true;
