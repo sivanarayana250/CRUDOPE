@@ -7,7 +7,7 @@ import { Employee } from './employee.model';
 export class CommonService {
   EMPLOYEE_DATA: Employee[] = [
     {
-      id: 1,
+      id: 0,
       firstName: 'Alex',
       company: 'INFOSYS',
       phone: 1234567890,
@@ -18,7 +18,7 @@ export class CommonService {
       password: 'eref',
     },
     {
-      id: 2,
+      id: 1,
       firstName: 'Jayanth',
       company: 'TCS',
       phone: 1234567890,
@@ -29,7 +29,7 @@ export class CommonService {
       password: 'werfrf',
     },
     {
-      id: 3,
+      id: 2,
       firstName: 'Raja',
       company: 'TECHIE',
       phone: 1234567890,

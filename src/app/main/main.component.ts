@@ -53,14 +53,13 @@ export class MainComponent implements OnInit {
     this.employeeForm.patchValue(data.employee);
     this.commonService.editToggle =!this.commonService.editToggle;
     this.addnewEmployee = !this.addnewEmployee;
-    console.log(this.employeeForm.value,  this.commonService.editToggle);
+    
 
   }
   onNoClick() {
     this.addnewEmployee = false;
   }
   onSubmit() {
-    console.log(this.employeeForm.value);
     if( this.commonService.editToggle) {
       this.commonService.editEmployee(this.employeeForm.value);
       this.commonService.editToggle =!this.commonService.editToggle;
