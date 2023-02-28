@@ -1,54 +1,28 @@
 <div class="table-tbody-scroll">
-    <!-- <table  class="table pd-b-5" >
-      
-      <thead>
-        <tr>
-            <th>FirstName </th>
-            <th>LastName </th>
-            <th>Company </th>
-            <th>Phone </th>
-            <th>Email </th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
+  <table>
+    <thead>
+      <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Company</th>
+        <th>DOB</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
       <tr *ngFor="let employee of employess; let i = index">
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-        <td>{{employee.company}}</td>
-        <td>{{employee.phone}}</td>
-        <td>{{employee.email}}</td>
-        <td (click)="EditEmployee(employee ,i)">Edit</td>
-        <td (click)="deleteEmployee(i)">delete</td>
-        </tr>
-    </table> -->
-    <table>
-      <thead>
-        <tr>
-          <th>FirstName </th>
-          <th>LastName </th>
-          <th>DOB</th>
-          <th>Company </th>
-          <th>Phone </th>
-          <th>Email </th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let employee of employess; let i = index">
-          <td>{{employee.firstName}}</td>
-          <td>{{employee.lastName}}</td>
-          <td>{{employee.dob}}</td>
-          <td>{{employee.company}}</td>
-          <td>{{employee.phone}}</td>
-          <td>{{employee.email}}</td>
-          <td ><button (click)="EditEmployee(employee ,i)">Edit</button></td>
-          <td><button (click)="deleteEmployee(i)">Delete</button></td>
-          </tr>
-      </tbody>
-    </table>
-
-    </div>
-    
+        <td>{{ employee.firstName }}</td>
+        <td>{{ employee.lastName }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.company }}</td>
+        <td>{{ employee.dob }}</td>
+        <td><button (click)="EditEmployee(employee, i)">Edit</button></td>
+        <td><button (click)="deleteEmployee(employee, i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
