@@ -2,7 +2,7 @@
   Add User
 </button>
 
-<div class="row" *ngIf="addnewEmployee">
+<div class="row" *ngIf="addnewEmployee || editEmployee">
   <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -139,7 +139,12 @@
 
       <div class="buttonClass">
         <div class="saveBtn">
-          <button class="btn btn-primary" type="submit">Register</button>
+          <button *ngIf="addnewEmployee" class="btn btn-primary" type="submit">
+            Register
+          </button>
+          <button *ngIf="!addnewEmployee" class="btn btn-primary" type="submit">
+            Update
+          </button>
         </div>
         <div class="cancel">
           <button type="button" mat-button (click)="onNoClick()">Cancel</button>

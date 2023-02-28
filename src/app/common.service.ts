@@ -16,6 +16,7 @@ export class CommonService {
       dob: '09-07-1997',
       gender: 'male',
       password: 'eref',
+      confirmPassword: 'eref',
     },
     {
       id: 1,
@@ -27,6 +28,7 @@ export class CommonService {
       dob: '10-08-1996',
       gender: 'male',
       password: 'werfrf',
+      confirmPassword: 'werfrf'
     },
     {
       id: 2,
@@ -38,6 +40,7 @@ export class CommonService {
       dob: '10-08-1995',
       gender: 'male',
       password: 'wefd',
+      confirmPassword:'wefd',
     },
   ];
   editToggle: boolean = false;

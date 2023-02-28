@@ -8,4 +8,5 @@ export interface Employee {
     dob:string
     gender:string;
     password:string;
+    confirmPassword:string;
 }

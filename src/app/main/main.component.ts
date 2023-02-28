@@ -17,6 +17,7 @@ export class MainComponent implements OnInit {
   employeeForm: any = FormGroup;
   addnewEmployee: boolean = false;
   invalid: any;
+editEmployee: boolean =false ;
   constructor(public commonService: CommonService) {}
 
   ngOnInit(): void {
@@ -63,6 +64,7 @@ export class MainComponent implements OnInit {
 
   public addEmployee() {
     this.addnewEmployee = true;
+    this.editEmployee =false;
   }
 
   public deleteEmployee(data: any) {
@@ -70,12 +72,15 @@ export class MainComponent implements OnInit {
   }
 
   public editData(data: any) {
+    this.addnewEmployee = false;
+    this.editEmployee = true;
+    console.log(this.addnewEmployee)
     this.employeeForm.patchValue(data.employee);
     this.commonService.editToggle = !this.commonService.editToggle;
-    this.addnewEmployee = !this.addnewEmployee;
   }
   onNoClick() {
     this.addnewEmployee = false;
+    this.editEmployee =false;
   }
 
   onSubmit() {
