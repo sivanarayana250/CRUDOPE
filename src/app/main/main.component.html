@@ -94,6 +94,7 @@
               class="form-control"
               id="password"
               formControlName="password"
+              (change)="onPasswordChange()"
             />
         <div
             *ngIf="employeeForm.controls['password'].invalid && (employeeForm.controls['password'].dirty || employeeForm.controls['password'].touched)">
@@ -104,16 +105,13 @@
       <div class="form-group">
         <label for="confirmPassword">Confirm Password</label>
         <input
-          type="password"
-          class="form-control"
-          id="confirmPassword"
-          formControlName="confirmPassword"
-        />
-        <div
-            *ngIf="employeeForm.controls['confirmPassword'].invalid && (employeeForm.controls['confirmPassword'].dirty || employeeForm.controls['confirmPassword'].touched)">
-            <div *ngIf="employeeForm.controls.confirmPassword.errors">Password should match</div>
-        </div>
-        
+                            type="password"
+                            class="form-control"
+                            id="confirmPassword"
+                            formControlName="confirmPassword"
+                            (change)="onPasswordChange()"
+                          />
+                          <span *ngIf="confirm_password.hasError('mismatch') && employeeForm.controls['confirmPassword'].touched" >Password do not match.</span>
       </div>
 
       <div class="buttonClass">

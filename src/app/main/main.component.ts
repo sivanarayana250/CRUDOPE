@@ -25,11 +25,26 @@ export class MainComponent implements OnInit {
       'password': new FormControl(null, [Validators.required]),
       'confirmPassword': new FormControl(null, [Validators.required]),
     });
-    this.employeeForm.addValidators(
-      matchValidator(this.employeeForm.get('password'), this.employeeForm.get('confirmPassword'))
-    );
     // console.log(this.employeeForm.invalid)
   }
+
+
+onPasswordChange() {
+  if (this.confirm_password.value == this.password.value) {
+    this.confirm_password.setErrors(null);
+  } else {
+    this.confirm_password.setErrors({ mismatch: true });
+  }
+}
+
+
+get password(): AbstractControl {
+  return this.employeeForm.controls['password'];
+}
+
+get confirm_password(): AbstractControl {
+  return this.employeeForm.controls['confirmPassword'];
+}
 
   public numberOnly(event:any): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
@@ -72,14 +87,5 @@ export class MainComponent implements OnInit {
   }
 }
 
-function matchValidator(
-  control: AbstractControl,
-  controlTwo: AbstractControl
-): ValidatorFn {
-  return () => {
-    if (control.value !== controlTwo.value)
-      return { match_error: 'Value does not match' };
-    return null;
-  };
-}
+
 
