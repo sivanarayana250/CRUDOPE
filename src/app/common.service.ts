@@ -15,6 +15,7 @@ export class CommonService {
       lastName: 'George',
       dob: '09-07-1997',
       gender: 'male',
+      password: 'eref'
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ export class CommonService {
       lastName: 'kelli',
       dob: '10-08-1996',
       gender: 'male',
+      password:'werfrf'
     },
     {
       id: 3,
@@ -35,6 +37,7 @@ export class CommonService {
       lastName: 'kumar',
       dob: '10-08-1995',
       gender: 'male',
+      password:'wefd'
     },
   ];
   editToggle: boolean = false;

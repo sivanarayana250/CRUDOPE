@@ -6,5 +6,6 @@ export interface Employee {
     firstName: string;
     email: string;
     dob:string
-    gender:string
+    gender:string;
+    password:string;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { CommonService } from '../common.service';
 
 @Component({
@@ -25,7 +25,9 @@ export class MainComponent implements OnInit {
       'password': new FormControl(null, [Validators.required]),
       'confirmPassword': new FormControl(null, [Validators.required]),
     });
-
+    this.employeeForm.addValidators(
+      matchValidator(this.employeeForm.get('password'), this.employeeForm.get('confirmPassword'))
+    );
 
   }
   public addEmployee() {
@@ -59,3 +61,15 @@ export class MainComponent implements OnInit {
     this.addnewEmployee = false;
   }
 }
+
+function matchValidator(
+  control: AbstractControl,
+  controlTwo: AbstractControl
+): ValidatorFn {
+  return () => {
+    if (control.value !== controlTwo.value)
+      return { match_error: 'Value does not match' };
+    return null;
+  };
+}
+
